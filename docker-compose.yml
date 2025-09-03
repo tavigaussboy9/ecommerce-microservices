@@ -29,7 +29,7 @@ services:
       - MONGO_URI=mongodb://mongo:27017/paiement
 
   mongo:
-    image: mongo
+    image: mongo:latest
     ports:
       - '27017:27017'
     volumes:
