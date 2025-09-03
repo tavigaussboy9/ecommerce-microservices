@@ -24,7 +24,7 @@ services:
   paiement:
     build: ./service-paiement
     ports:
-      - '3004:3000'
+      - '3004:3004'
     environment:
       - MONGO_URI=mongodb://mongo:27017/paiement
 
