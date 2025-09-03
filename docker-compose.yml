@@ -10,7 +10,7 @@ services:
   produit:
     build: ./service-produit
     ports:
-      - '3002:3000'
+      - '3002:3002'
     environment:
       - MONGO_URI=mongodb://mongo:27017/produit
 
