@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  utilisateur:
+    build: ./service-utilisateur
+    ports:
+      - '3001:3000'
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/utilisateur
+
+  produit:
+    build: ./service-produit
+    ports:
+      - '3002:3000'
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/produit
+
+  commande:
+    build: ./service-commande
+    ports:
+      - '3003:3000'
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/commande
+
+  paiement:
+    build: ./service-paiement
+    ports:
+      - '3004:3000'
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/paiement
+
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
